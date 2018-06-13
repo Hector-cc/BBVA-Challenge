@@ -35,19 +35,19 @@ Grupo <- function(Eq1,Eq2,Eq3,Eq4){
   
   P1<-filter(DATA, Equipo==Eq1)
   gp1<-as.numeric(P1[3])
-  p1<-round(sum(P1[4:length(P1)])/(length(P1)-2))
+  p1<-sum(P1[4:length(P1)])/(length(P1)-3)
   
   P2<-filter(DATA, Equipo==Eq2)
   gp2<-as.numeric(P2[3])
-  p2<-round(sum(P2[4:length(P1)])/(length(P2)-2))
+  p2<-sum(P2[4:length(P2)])/(length(P2)-3)
   
   P3<-filter(DATA, Equipo==Eq3)
   gp3<-as.numeric(P3[3])
-  p3<-round(sum(P3[4:length(P1)])/(length(P3)-2))
+  p3<-sum(P3[4:length(P3)])/(length(P3)-3)
   
   P4<-filter(DATA, Equipo==Eq4)
   gp4<-as.numeric(P4[3])
-  p4<-round(sum(P4[4:length(P1)])/(length(P4)-2))
+  p4<-sum(P4[4:length(P4)])/(length(P4)-3)
   
   
   part1<-marcador(p1,p2,gp1,gp2)
@@ -121,12 +121,12 @@ liga<-function(Eq1,Eq2,fas){
   P1<-filter(DATA, Equipo==Eq1)
   gp1<-as.numeric(P1[3])
   Ef1<-filter(DATA, Equipo==Eq1) %>% select(Efectividad)
-  p1<-round(sum(P1[4:length(P1)])/(length(P1)-2))
+  p1<-sum(P1[4:length(P1)])/(length(P1)-3)
   
   P2<-filter(DATA, Equipo==Eq2)
   gp2<-as.numeric(P2[3])
   Ef2<-filter(DATA, Equipo==Eq2) %>% select(Efectividad)
-  p2<-round(sum(P2[4:length(P1)])/(length(P2)-2))
+  p2<-sum(P2[4:length(P2)])/(length(P2)-3)
   
   u<-runif(1)
   
@@ -325,8 +325,6 @@ head(Fin$Sim)
 Fin$Sim
 
 Fin$Prediccion
-
-
 
 
 write.csv(Fin$Val,file="Simulaciones.csv")
