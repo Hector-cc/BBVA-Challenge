@@ -7,6 +7,7 @@ DATA<-data.frame(read.csv("DATA.csv", row.names=NULL, header=T))
 row.names(DATA)<-DATA[,1]
 DATA$Equipo<-as.character(DATA$Equipo)
 
+head(DATA)
 
 marcador<- function(eq1,eq2,gp1,gp2){
   
@@ -313,7 +314,7 @@ BBVA_Challenge<-function(n){
   return(H)
 }
 
-Fin<-BBVA_Challenge(100000)
+Fin<-BBVA_Challenge(10000)
 
 Fin$Simulaciones[[1000]]$Partidos
 Fin$Simulaciones[[1000]]$Final
